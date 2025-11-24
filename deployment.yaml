@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cafestaticexam
+  labels:
+    app: cafestaticexam
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cafestaticexam
+  template:
+    metadata:
+      labels:
+        app: cafestaticexam
+    spec:
+      containers:
+      - name: cafestaticexam
+        image: sthuthi22/cafexam:latest
+        ports:
+        - containerPort: 80
